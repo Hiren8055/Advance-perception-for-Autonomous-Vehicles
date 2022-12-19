@@ -1,0 +1,35 @@
+x: 196.4206181381147 and y: 150.12238073132846
+x: 90.50582063563502 and y: 20.136038341921633
+x: 236.31060680787974 and y: 150.12238073132846
+x: 351.85402226513025 and y: 20.136038341921633
+x: 352.54178069047106 and y: 20.136038341921633
+[[196.4206181381147, 150.12238073132846], [90.50582063563502, 20.136038341921633], [236.31060680787974, 150.12238073132846], [351.85402226513025, 20.136038341921633], [352.54178069047106, 20.136038341921633]]
+distance between upper left lower left and upper right and lower right
+x : 105.91479750247967   -115.54341545725052
+y : 129.98634238940684   129.98634238940684
+upperleft , left intersection, upperright , right intersection
+this points are according to opencv axes paste this coordinates in constants FRONT_VIEW_POINTS
+[(196.4206181381147, 265.87761926867154), (74.09867828295815, 416.0), (236.31060680787974, 265.87761926867154), (369.75272301350503, 416.0)]
+
+
+
+
+if not FLAGS.dont_show:
+            width_resized,height_resized = 416,416
+            frame_resized = cv2.resize(result, (width_resized, height_resized),
+                                interpolation=cv2.INTER_LINEAR)
+            cv2.imshow("frame_resized",frame_resized)
+            TV_frame, M = inv_map(frame_resized)
+            cv2.imshow("TV_frame",TV_frame)
+            # CREATE WHITE FRAME AND PLOT IN THE LOWER CENTER OF BB
+            _,TV_coors =  get_inv_coor(bboxes)
+            print("TV_coor",TV_coors)
+            img_3 = np.zeros([1200,1200,3],dtype=np.uint8)
+            img_3.fill(255)
+            # or img[:] = 255
+            for TV_coor in TV_coors:
+                cv2.circle(TV_frame,TV_coor,2,(0,0,0),1)
+            TV_frame_resized = cv2.resize(img_3,(512,512),interpolation=cv2.INTER_LINEAR)
+            cv2.imshow('TV_frame_resized', TV_frame_resized)
+            print("image shape: ", img_3.shape)
+            print("bboxes",bboxes)
