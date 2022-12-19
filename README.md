@@ -16,7 +16,7 @@ SpeedOfCar  <br/>
 2. [YoloV3-weights](https://drive.google.com/drive/folders/1xDQSCmEtx9RVDGNn0USBruAhSzTznhrm?usp=share_link) for 3D bounding box
 and paste in 3D-boundingBox folder<br/>
 
-3. [Segmenatation-weighta](https://drive.google.com/file/d/1y9uSqjGMi3Ogp0M45e9q-WYmvlWg1Qj6/view?usp=share_link)
+3. [Segmenatation-weights](https://drive.google.com/file/d/1y9uSqjGMi3Ogp0M45e9q-WYmvlWg1Qj6/view?usp=share_link)
 and paste in Segmentation folder.
  
 ## 3. Run the code
